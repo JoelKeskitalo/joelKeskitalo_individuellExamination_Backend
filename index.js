@@ -1,16 +1,44 @@
 const express = require('express')
+const swaggerJsdoc = require('swagger-jsdoc')
+const swaggerUi = require('swagger-ui-express')
+
 const app = express()
 const PORT = process.env.PORT || 5000
 
 const userRoutes = require('./routes/userRoutes')
 const notesRoutes = require('./routes/notesRoutes')
 
-// Middleware for parsing JSON bodies
+
+
+// Swagger definition
+const swaggerOptions = {
+    definition: {
+      openapi: '3.0.0', 
+      info: {
+        title: 'Notes API',
+        version: '1.0.0',
+        description: 'A simple API for managing notes',
+      },
+      servers: [
+        {
+          url: 'http://localhost:5000/notesapi/', 
+        },
+      ],
+    },
+    apis: ['./routes/*.js'], // Sökvägar till route-filerna
+}
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+  
+// Använd swagger-ui-express för att tjäna Swagger-dokumentationen
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+
 app.use(express.json());
 
 // Routes, baseURL: http://localhost:5000
-app.use('/api/user', userRoutes)
-app.use('/api/notes', notesRoutes)
+app.use('/notesapi/user', userRoutes)
+app.use('/notesapi/notes', notesRoutes)
 
 
 
