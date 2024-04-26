@@ -1,3 +1,5 @@
+// importera modellen
+
 exports.getAllNotes = (req, res) => {
     res.status(200).json([{id: '1', title: 'test', text: 'test text!', createdAt: new Date(), modifiedAt: new Date()}])
 }

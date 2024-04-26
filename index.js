@@ -9,7 +9,6 @@ const userRoutes = require('./routes/userRoutes')
 const notesRoutes = require('./routes/notesRoutes')
 
 
-
 // Swagger definition
 const swaggerOptions = {
     definition: {
