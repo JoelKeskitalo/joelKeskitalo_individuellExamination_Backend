@@ -1,6 +1,7 @@
 // importera modellen
 const User = require('../models/userModel')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 exports.registerUser = async (req, res) => {
     try {
@@ -12,8 +13,15 @@ exports.registerUser = async (req, res) => {
         }
 
         const newUser = await User.createUser(username, password) // modell-delen, tbc...
-        res.status(200).send({ message: 'User created successfully'})
-        
+        res.status(200).json({ 
+            message: 'User created successfully',
+            user: {
+                id: newUser.id,
+                username: newUser.username
+            }
+        })
+
+
     } catch (error) {
         res.status(500).send({ message: 'Internal server error'})
     }
@@ -23,6 +31,6 @@ exports.registerUser = async (req, res) => {
 
 
 
-exports.loginUser = (req, res) => {
-    res.status(200).send({ message: 'User logged in successfully'})
+exports.loginUser = async (req, res) => {
+    
 }
