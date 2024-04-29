@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 5000
 const userRoutes = require('./routes/userRoutes')
 const notesRoutes = require('./routes/notesRoutes')
 
-
 // Swagger definition
 const swaggerOptions = {
     definition: {
@@ -29,21 +28,15 @@ const swaggerOptions = {
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
   
-// Använd swagger-ui-express för att tjäna Swagger-dokumentationen
+// Använd swagger-ui-express för att "tjäna" Swagger-dokumentationen
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-
+// Middleware för JSON parsing
 app.use(express.json());
 
 // Routes, baseURL: http://localhost:5000
 app.use('/notesapi/user', userRoutes)
 app.use('/notesapi/notes', notesRoutes)
-
-
-
-
-
-
 
 app.listen(PORT, () => {
     console.log(`Server running at: http://localhost:${PORT}`)

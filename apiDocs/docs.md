@@ -2,7 +2,7 @@
 
 ## Description
 
-This API allows the client to manage their notes, such as creating, reading, updating and deleting.
+This API allows the client to manage their notes, such as creating, reading, updating and deleting them.
 The client can also log in to access previously saved notes.
 
 ## Authentication
