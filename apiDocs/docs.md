@@ -15,7 +15,7 @@ Endpoints require authentication. This authentication is handled via JSON Web To
 
 ### User Management
 
-- **POST /api/user/signup**
+- **POST /notesapi/user/signup**
 
   - **Description**: Register a new user.
   - **Body**:
@@ -26,7 +26,7 @@ Endpoints require authentication. This authentication is handled via JSON Web To
     }
     ```
 
-- **POST /api/user/login**
+- **POST /notesapi/user/login**
   - **Description**: Authenticate a user and return a JWT.
   - **Body**:
     ```json
@@ -40,11 +40,11 @@ Endpoints require authentication. This authentication is handled via JSON Web To
 
 ### Notes Management
 
-- **GET /api/notes**
+- **GET /notesapi/notes**
 
   - **Description**: Retrieve all notes for the logged-in user.
 
-- **POST /api/notes**
+- **POST /notesapi/notes**
 
   - **Description**: Create a new note.
   - **Body**:
@@ -55,7 +55,7 @@ Endpoints require authentication. This authentication is handled via JSON Web To
     }
     ```
 
-- **PUT /api/notes**
+- **PUT /notesapi/notes**
 
   - **Description**: Update an existing note.
   - **Body**:
@@ -67,7 +67,7 @@ Endpoints require authentication. This authentication is handled via JSON Web To
     }
     ```
 
-- **DELETE /api/notes**
+- **DELETE /notesapi/notes**
 
   - **Description**: Delete a specific note by ID.
   - **Body**:
@@ -77,7 +77,7 @@ Endpoints require authentication. This authentication is handled via JSON Web To
     }
     ```
 
-- **GET /api/notes/search**
+- **GET /notesapi/notes/search**
   - **Description**: Search among notes by title.
   - **Query Parameter**:
     - `title`: string
