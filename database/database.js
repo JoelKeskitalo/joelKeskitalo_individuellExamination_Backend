@@ -1,11 +1,9 @@
-const Datastore = require('nedb')
-const path = require('path')
+const Datastore = require('nedb');
+const path = require('path');
 
-let db = {}
+let db = new Datastore({
+  filename: path.join(__dirname, 'notes.db'),
+  autoload: true
+});
 
-db.notes = new Datastore({
-    filename: path.join(__dirname, 'notes.db'),
-    autoload: true
-})
-
-module.exports = db
+module.exports = db;

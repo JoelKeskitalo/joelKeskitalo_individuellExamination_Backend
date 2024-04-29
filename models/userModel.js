@@ -3,38 +3,53 @@ const bcrypt = require('bcrypt')
 
 class User {
 
-    static async createUser (username, password) {
+    static async createUser(username, password) {
 
         if (!username || !password) {
-            throw new Error('Username and password required')
+            throw new Error('Username and password required');
         }
-
         if (password.length < 6) {
-            throw new Error('Password must be at least 6 characters long')
+            throw new Error('Password must be at least 6 characters long');
+        }
+        if (!username.trim() || username.indexOf(' ') >= 0) {
+            throw new Error('Username cannot contain spaces');
         }
 
-        if(!username.trim() || username.indexOf('') >= 0) {
-            throw new Error('Username cannot contain spaces')
-        }
-
-        const hashedPassword = await bcrypt.hash(password, 10)
+        const hashedPassword = await bcrypt.hash(password, 10);
         const user = {
             type: 'user',
             username: username,
             password: hashedPassword
-        }
+        };
 
-        return db.insert(user)
+
+        return new Promise((resolve, reject) => {
+            db.insert(user, (err, newDoc) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(newDoc);
+                }
+            });
+        });
     }
 
-    static async findUserByUsername (username) {
 
-        if (!username) {
-            throw new Error('Username is required')
-        }
+    
+    static async findUserByUsername(username) {
 
-        return db.findOne({type: 'user', username})
+        return new Promise((resolve, reject) => {
+
+            db.findOne({ type: 'user', username: username }, (err, doc) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(doc);
+                }
+            });
+        });
     }
+    
 }
 
 module.exports = User
