@@ -3,3 +3,4 @@
 {"type":"note","title":"testnotetwo","text":"gim yet?","createdAt":{"$$date":1714465535479},"modifiedAt":{"$$date":1714465535479},"_id":"RI6nOpjxJ4EY0edx"}
 {"type":"user","username":"mickan","password":"$2b$10$sRNNMl6UUhOS/fVq86miEOlHLbgM0kRFnfVMeza1XR9m2I6DA228q","_id":"cJpj22qFECXHXM5G"}
 {"type":"user","username":"joel","password":"$2b$10$lfmNnrxZAe28aRvew4.wb.2x/8Ilx0A8qorUhuNtXpUKmYw4EA4F2","_id":"fAqkQVfpIhan0jog"}
+{"type":"note","title":"updatedNote","text":"hej hej, jag är uppdaterad!","createdAt":{"$$date":1714465442767},"modifiedAt":{"$$date":1714471650970},"_id":"7XQkcbJi5iJPvB59"}

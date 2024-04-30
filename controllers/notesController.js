@@ -24,13 +24,32 @@ exports.createNote = async (req, res) => {
 
 
 
-exports.updateNote = (req, res) => {
+exports.updateNote = async (req, res) => {
     try {
+        const note = await Note.updateNote(req.params.id, req.body)
+        if (note) {
+            res.status(200).json(note)
+        } else {
+            res.status(404).json({ message: 'Note not found'})
+        }
 
     } catch (error) {
         res.status(500).json({ message: 'Failed to update note', error: error.message})
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 exports.deleteNote = (req, res) => {
     try {
