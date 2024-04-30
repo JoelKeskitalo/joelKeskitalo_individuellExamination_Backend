@@ -32,7 +32,7 @@ const notesController = require('../controllers/notesController')
  *                   modifiedAt:
  *                     type: string
  */
-router.get('/', notesController.getAllNotes);
+router.get('/', notesController.getAllNotes)
 
 /**
  * @openapi
@@ -55,7 +55,7 @@ router.get('/', notesController.getAllNotes);
  *       200:
  *         description: Note created successfully.
  */
-router.post('/', notesController.createNote);
+router.post('/', notesController.createNote)
 
 /**
  * @openapi
@@ -85,7 +85,7 @@ router.post('/', notesController.createNote);
  *       200:
  *         description: Note updated successfully.
  */
-router.put('/:id', notesController.updateNote);
+router.put('/:id', notesController.updateNote)
 
 /**
  * @openapi
@@ -104,7 +104,7 @@ router.put('/:id', notesController.updateNote);
  *       200:
  *         description: Note deleted successfully.
  */
-router.delete('/:id', notesController.deleteNote);
+router.delete('/:id', notesController.deleteNote)
 
 /**
  * @openapi
@@ -142,6 +142,6 @@ router.delete('/:id', notesController.deleteNote);
  *       400:
  *         description: Bad request, e.g., missing or invalid title parameter.
  */
-router.get('/search', notesController.searchNotes);
+router.get('/search', notesController.searchNotes)
 
-module.exports = router;
+module.exports = router

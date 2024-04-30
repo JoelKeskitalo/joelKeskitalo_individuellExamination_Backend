@@ -26,13 +26,13 @@ const swaggerOptions = {
     apis: ['./routes/*.js'], // Sökvägar till route-filerna
 }
 
-const swaggerSpec = swaggerJsdoc(swaggerOptions);
+const swaggerSpec = swaggerJsdoc(swaggerOptions)
   
 // Använd swagger-ui-express för att "tjäna" Swagger-dokumentationen
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Middleware för JSON parsing
-app.use(express.json());
+app.use(express.json())
 
 // Routes, baseURL: http://localhost:5000
 app.use('/notesapi/user', userRoutes)
