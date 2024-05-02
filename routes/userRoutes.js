@@ -25,7 +25,7 @@ const userController = require('../controllers/userController')
  *       200:
  *         description: User registered successfully.
  */
-router.post('/signup', userController.registerUser);
+router.post('/signup', userController.registerUser)
 
 /**
  * @openapi

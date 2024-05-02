@@ -10,7 +10,6 @@ exports.getAllNotes = async (req, res) => {
 }
 
 
-
 exports.createNote = async (req, res) => {
     try {
         const note = await Note.createNote(req.body) 
@@ -19,9 +18,6 @@ exports.createNote = async (req, res) => {
         res.status(500).json({message: 'Failed to create note', error: error.message})
     }
 }
-
-
-
 
 
 exports.updateNote = async (req, res) => {
@@ -40,24 +36,22 @@ exports.updateNote = async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-exports.deleteNote = (req, res) => {
+exports.deleteNote = async (req,res) => {
     try {
+        const numRemoved = await Note.deleteNote(req.params.id)
+        if(numRemoved > 0) {
+            res.status(200).json({ message: 'Note deleted successfully'})
+        } else {
+            res.status(404).json({ message: 'Note not found'})
+        }
 
     } catch(error) {
         res.status(500).json({ message: 'Failed to delete note', error: error.message})
     }
 }
+
+
+
 
 exports.searchNotes = (req, res) => {
     try {
