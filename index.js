@@ -37,9 +37,6 @@ const swaggerOptions = {
 }
 
 
-
-
-
 const swaggerSpec = swaggerJsdoc(swaggerOptions)
   
 // Använd swagger-ui-express för att "tjäna" Swagger-dokumentationen

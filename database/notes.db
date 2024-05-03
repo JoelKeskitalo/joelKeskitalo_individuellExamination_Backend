@@ -1,7 +1,9 @@
+{"type":"note","title":"stretweing","text":"strewrweing","createdAt":{"$$date":1714731723238},"modifiedAt":{"$$date":1714731723238},"_id":"AkAWl9WsiwRcydS4"}
 {"type":"user","username":"testuser","password":"$2b$10$PTzRWKBq8N5ei9Jvl6CbJ.PLuaL8gBfmqHywJ0uRFIQQ256ylrvyi","_id":"OemTTwZZSBEssXGF"}
 {"type":"user","username":"jollebolle","password":"$2b$10$3WYHo/eIO/ZNugXlaELz7udWpAnozkiXsFhWQpMi1vB.m5Ft9z3cq","_id":"PgwpAUU0lvKW4mcx"}
 {"type":"note","title":"testnotetwo","text":"gim yet?","createdAt":{"$$date":1714465535479},"modifiedAt":{"$$date":1714465535479},"_id":"RI6nOpjxJ4EY0edx"}
 {"type":"user","username":"testUserTwo","password":"$2b$10$CuUADQdWupdOCSh5VwGTBeHsxGUL.AnhprfwhY1GwEBteMAkQTIGW","_id":"RRRzzxkvvcEWpqJG"}
 {"type":"user","username":"mickan","password":"$2b$10$sRNNMl6UUhOS/fVq86miEOlHLbgM0kRFnfVMeza1XR9m2I6DA228q","_id":"cJpj22qFECXHXM5G"}
 {"type":"user","username":"joel","password":"$2b$10$lfmNnrxZAe28aRvew4.wb.2x/8Ilx0A8qorUhuNtXpUKmYw4EA4F2","_id":"fAqkQVfpIhan0jog"}
-{"type":"note","title":"stretweing","text":"strewrweing","createdAt":{"$$date":1714731723238},"modifiedAt":{"$$date":1714731723238},"_id":"AkAWl9WsiwRcydS4"}
+{"type":"user","username":"mickanIgen","password":"$2b$10$ZHYkyqT76lIf7IBUkaAC/u8S4.QnOoxMzYG5DV6QlhcIEvc1gQI72","_id":"ttwNZlQO71QqLDlm"}
+{"type":"note","title":"testnoteagainithink","text":"lets type something fun","createdAt":{"$$date":1714739208810},"modifiedAt":{"$$date":1714739208810},"_id":"vbXyXEEOHDvKgQIz"}
