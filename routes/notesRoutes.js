@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
 const notesController = require('../controllers/notesController')
+const verifyToken = require('../middleware/auth')
 
 // base: notesapi/notes
 
@@ -11,6 +11,8 @@ const notesController = require('../controllers/notesController')
  *   get:
  *     summary: Retrieves all notes.
  *     description: This endpoint retrieves all notes for the logged-in user.
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: A list of all notes.
@@ -32,7 +34,7 @@ const notesController = require('../controllers/notesController')
  *                   modifiedAt:
  *                     type: string
  */
-router.get('/', notesController.getAllNotes)
+router.get('/', verifyToken, notesController.getAllNotes)
 
 /**
  * @openapi
@@ -40,6 +42,8 @@ router.get('/', notesController.getAllNotes)
  *   post:
  *     summary: Create a new note.
  *     description: This endpoint allows the user to create a new note.
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -55,7 +59,7 @@ router.get('/', notesController.getAllNotes)
  *       200:
  *         description: Note created successfully.
  */
-router.post('/', notesController.createNote)
+router.post('/', verifyToken, notesController.createNote)
 
 /**
  * @openapi
@@ -63,6 +67,8 @@ router.post('/', notesController.createNote)
  *   put:
  *     summary: Update an existing note.
  *     description: This endpoint allows the user to update an existing note by ID.
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -85,7 +91,7 @@ router.post('/', notesController.createNote)
  *       200:
  *         description: Note updated successfully.
  */
-router.put('/:id', notesController.updateNote)
+router.put('/:id', verifyToken, notesController.updateNote)
 
 /**
  * @openapi
@@ -93,6 +99,8 @@ router.put('/:id', notesController.updateNote)
  *   delete:
  *     summary: Delete a note.
  *     description: This endpoint allows the user to delete a note by ID.
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -104,7 +112,7 @@ router.put('/:id', notesController.updateNote)
  *       200:
  *         description: Note deleted successfully.
  */
-router.delete('/:id', notesController.deleteNote)
+router.delete('/:id', verifyToken, notesController.deleteNote)
 
 /**
  * @openapi
@@ -112,6 +120,8 @@ router.delete('/:id', notesController.deleteNote)
  *   get:
  *     summary: Search among notes.
  *     description: This endpoint allows users to search notes by title.
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: query
  *         name: title
@@ -142,6 +152,6 @@ router.delete('/:id', notesController.deleteNote)
  *       400:
  *         description: Bad request, e.g., missing or invalid title parameter.
  */
-router.get('/search', notesController.searchNotes)
+router.get('/search', verifyToken, notesController.searchNotes)
 
 module.exports = router

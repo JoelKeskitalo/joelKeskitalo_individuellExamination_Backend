@@ -10,21 +10,35 @@ const notesRoutes = require('./routes/notesRoutes')
 
 // Swagger definition
 const swaggerOptions = {
-    definition: {
-      openapi: '3.0.0', 
-      info: {
-        title: 'Notes API',
-        version: '1.0.0',
-        description: 'A simple API for managing notes',
-      },
-      servers: [
-        {
-          url: 'http://localhost:5000/notesapi/', 
-        },
-      ],
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Notes API',
+      version: '1.0.0',
+      description: 'A simple API for managing notes',
     },
-    apis: ['./routes/*.js'], // Sökvägar till route-filerna
+    servers: [{
+      url: 'http://localhost:5000/notesapi/',
+    }],
+    components: {
+      securitySchemes: {
+        BearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        }
+      }
+    },
+    security: [{ 
+      BearerAuth: [] 
+    }]
+  },
+  apis: ['./routes/*.js'],
 }
+
+
+
+
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions)
   

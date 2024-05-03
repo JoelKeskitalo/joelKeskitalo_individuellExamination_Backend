@@ -50,13 +50,16 @@ exports.loginUser = async (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials'})
         }
 
-        res.status(200).json({ message: 'Login successful' })
+        const token = jwt.sign(
+            { userId: user._id, username: user.username },
+            'secret_key',
+            { expiresIn: '24h'}
+        )
 
+
+
+        res.status(200).json({ message: 'Login successful', token: token })
     } catch (error) {
-        if (error.message) {
-            return res.status(400).json({ error: error.message})
-        }
-
         res.status(500).json({ message: 'Internal server error'})
     }
 }
