@@ -52,11 +52,16 @@ exports.deleteNote = async (req,res) => {
 
 
 
-
-exports.searchNotes = (req, res) => {
+exports.searchNotes = async (req, res) => {
     try {
+        const title = req.query.title
+        if (!title) {
+            return res.status(400).json({ message: 'Search term is required'})
+        }
+        const notes = await Note.searchNotes(title)
+        res.status(200).json(notes)
 
     } catch(error) {
-        res.status(500).json({ message: 'Could not find note', error: error.message})
+        res.status(500).json({ message: 'Error searching for notes', error: error.message})
     }
 }
