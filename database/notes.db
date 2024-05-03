@@ -7,3 +7,5 @@
 {"type":"user","username":"joel","password":"$2b$10$lfmNnrxZAe28aRvew4.wb.2x/8Ilx0A8qorUhuNtXpUKmYw4EA4F2","_id":"fAqkQVfpIhan0jog"}
 {"type":"user","username":"mickanIgen","password":"$2b$10$ZHYkyqT76lIf7IBUkaAC/u8S4.QnOoxMzYG5DV6QlhcIEvc1gQI72","_id":"ttwNZlQO71QqLDlm"}
 {"type":"note","title":"testnoteagainithink","text":"lets type something fun","createdAt":{"$$date":1714739208810},"modifiedAt":{"$$date":1714739208810},"_id":"vbXyXEEOHDvKgQIz"}
+{"type":"note","title":"rabbithole","text":"this is just a random text, describing nothing really... which, in itself, might be a kind of description i guess","createdAt":{"$$date":1714747200294},"modifiedAt":{"$$date":1714747200294},"_id":"4ouFVMZbKNR1kuut"}
+{"type":"note","title":"lets type something fun SEQUEL","text":"im back baby","createdAt":{"$$date":1714747200294},"modifiedAt":{"$$date":1714747240388},"_id":"4ouFVMZbKNR1kuut"}
